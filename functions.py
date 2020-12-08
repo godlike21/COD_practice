@@ -2,7 +2,7 @@
 def get_title(soup):
     try:
         #Outer Object tag
-        title = soup.find('span', attrs={'id':'productTitle'})
+        title = soup.find('span', attrs={"id":'productTitle'})
         
         #Inner Navigable string object
         title_value = title.string
@@ -35,7 +35,7 @@ def get_rating(soup):
 def get_review(soup):
     try:
         #review object tag
-        review = soup.find('span', attrs={'id':'acrCustomerReviewText'}).string.split()
+        review = soup.find('span', attrs={'id':'acrCustomerReviewText'}).string.strip()
     except AttributeError:
         review = ""
     return review
