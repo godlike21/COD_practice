@@ -28,7 +28,10 @@ def get_rating(soup):
         #rating object
         rating = soup.find('i', attrs={'class':'a-icon a-icon-star a-star-4-5'}).string.strip()
     except AttributeError:
-        rating = ""
+        try:
+            rating = soup.find('span', attrs={'class':'a-icon-alt'}).text
+        except:
+            rating = ""
     return rating
 
 #function to extract Product User review

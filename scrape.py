@@ -41,3 +41,4 @@ for link in links_list:
     print("User review=", get_review(new_soup))
     print("Availability=", get_availability(new_soup))
     print()
+    print()
